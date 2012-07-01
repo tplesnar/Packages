@@ -1,0 +1,30 @@
+{
+	"color_scheme": "Packages/Phix Color Scheme/Phix Dark.tmTheme",
+	"font_face": "Inconsolata",
+	"font_size": 13,
+
+     /*
+        The minimum delay in seconds (fractional seconds are okay) before
+        a linter is run when the "sublimelinter" setting is true. This allows
+        you to have background linting active, but defer the actual linting
+        until you are idle. When this value is greater than the built in linting delay,
+        errors are erased when the file is modified, since the assumption is
+        you don't want to see errors while you type.
+    */
+
+
+    // jshint: options for linting JavaScript. See http://jshint.com/options/ for more info.
+    // By deault, eval is allowed.
+
+    "sublimelinter_delay": 2,
+	"jshint_options":
+	{
+        // pre-indent are changed values
+        "browser" : true,
+        "boss" : true,
+        "jquery" : true,
+        "multistr": true
+	},
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true
+}

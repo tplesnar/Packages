@@ -1,0 +1,21 @@
+{
+	"auto_upgrade_last_run": 1341135167,
+	"installed_packages":
+	[
+		"Alignment",
+		"BracketHighlighter",
+		"Color Scheme - Perso",
+		"Color Scheme - Perso dark",
+		"Color Scheme - Perso light",
+		"Cucumber",
+		"Inc-Dec-Value",
+		"JsFormat",
+		"Package Control",
+		"Pretty JSON",
+		"SublimeBlockCursor",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"Theme - Nil",
+		"Theme - Soda"
+	]
+}

@@ -1,0 +1,17 @@
+[
+    // {
+    //     "caption": "Preferences",
+    //     "id": "preferences",
+    //     "children":
+    //     [
+    //         {"caption": "Color Scheme",
+    //         "children": [ { "command": "${color_schemes}" } ]
+    //         }
+    //     ]
+    // }
+
+    // {
+    //     "caption": "Color Scheme",
+    //     "children": [ { "command": "$color_schemes" } ]
+    // }
+]

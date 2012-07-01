@@ -1,0 +1,15 @@
+[
+    {
+        "keys": ["shift+enter"],
+        "command": "run_macro_file",
+        "args": {"file": "Packages/User/auto-line-ending-js.sublime-macro"},
+        "context":[
+         { "key": "selector", "operator": "equal", "operand": "source.js" }
+        ]
+    },
+
+    { "keys": ["right"], "command": "null"},
+    { "keys": ["left"], "command": "null"},
+    { "keys": ["up"], "command": "null"},
+    { "keys": ["down"], "command": "null"}
+]

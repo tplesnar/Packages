@@ -1,0 +1,17 @@
+{
+    "sublimelinter_popup_errors_on_save": true,
+    "javascript_linter": "jslint",
+    "jslint_options":
+    {
+        "browser": true,
+        "continue": true,
+        "debug": true,
+        "eqeq": true,
+        "indent": 4,
+        "nomen": true,
+        "plusplus": true,
+        "regexp": false,
+        "sloppy": true,
+        "vars": true
+    }
+}
