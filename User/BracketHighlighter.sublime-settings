@@ -1,7 +1,7 @@
 {
-    "quote_style" : "underline",
-    "curly_style" : "underline",
-    "round_style" : "underline",
-    "square_style": "underline",
-    "angle_style" : "underline"
+    "quote_style" : "outline",
+    "curly_style" : "outline",
+    "round_style" : "outline",
+    "square_style": "outline",
+    "angle_style" : "outline"
 }
