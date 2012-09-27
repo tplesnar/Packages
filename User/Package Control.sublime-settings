@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1341913065,
+	"auto_upgrade_last_run": 1348732136,
 	"installed_packages":
 	[
 		"Alignment",
@@ -16,6 +16,7 @@
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"Theme - Nil",
+		"Theme - Phoenix",
 		"Theme - Soda"
 	]
 }
