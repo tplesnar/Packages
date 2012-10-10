@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1349451464,
+	"auto_upgrade_last_run": 1349855183,
 	"installed_packages":
 	[
 		"Alignment",
@@ -8,6 +8,7 @@
 		"Color Scheme - Perso dark",
 		"Color Scheme - Perso light",
 		"Cucumber",
+		"DocBlockr",
 		"Inc-Dec-Value",
 		"JsFormat",
 		"Package Control",
