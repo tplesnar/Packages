@@ -123,13 +123,6 @@
       { "key": "following_text",  "operator": "regex_contains", "operand": "^\\*\\/$",     "match_all": true}
     ]
   },
-  // indent an asterisk added in a comment block
-  { "keys": ["*"], "command": "insert_snippet", "args": {"contents": " *"},
-    "context": [
-      { "key": "selector",       "operator": "equal",          "operand": "comment.block", "match_all": true },
-      { "key": "preceding_text", "operator": "regex_contains", "operand": "^\\s*$",        "match_all": true }
-    ]
-  },
   // De-indent at the end of a comment block
   { "keys": ["enter"], "command": "jsdocs_deindent",
     "context": [
@@ -165,6 +158,7 @@
   // show the autocomplete
   { "keys": ["@"], "command": "run_macro_file", "args": {"file": "Packages/DocBlockr/jsdocs-auto-complete.sublime-macro"},
     "context": [
+      { "key": "setting.auto_complete", "operator": "equal",    "operand": true,                           "match_all": true },
       { "key": "selection_empty", "operator": "equal",          "operand": true,                           "match_all": true },
       { "key": "preceding_text",  "operator": "regex_contains", "operand": "^\\s*(?:\\/\\*|###)?\\*\\s*$", "match_all": true },
       { "key": "selector",        "operator": "equal",          "operand": "comment.block",                "match_all": true }
@@ -221,6 +215,26 @@
   { "keys": ["alt+q"], "command": "jsdocs_wrap_lines",
     "context": [
       { "key": "selector", "operator": "equal", "operand": "comment.block", "match_all": true }
+    ]
+  },
+
+  // add line after, in a DocBlock
+  { "keys": ["ctrl+enter"], "command": "run_macro_file", "args": {"file": "Packages/DocBlockr/Add DocBlockr Line.sublime-macro"},
+    "context": [
+      { "key": "setting.auto_indent",   "operator": "equal",          "operand": true,            "match_all": true },
+      { "key": "selector",              "operator": "equal",          "operand": "comment.block", "match_all": true },
+      { "key": "auto_complete_visible", "operator": "equal",          "operand": false,           "match_all": true },
+      { "key": "preceding_text",        "operator": "regex_contains", "operand": "^\\s*\\*",      "match_all": true }
+    ]
+  },
+
+  // add line before, in a DocBlock
+  { "keys": ["ctrl+shift+enter"], "command": "run_macro_file", "args": {"file": "Packages/DocBlockr/Add DocBlockr Line Before.sublime-macro"},
+    "context": [
+      { "key": "setting.auto_indent",   "operator": "equal",          "operand": true,            "match_all": true },
+      { "key": "selector",              "operator": "equal",          "operand": "comment.block", "match_all": true },
+      { "key": "auto_complete_visible", "operator": "equal",          "operand": false,           "match_all": true },
+      { "key": "preceding_text",        "operator": "regex_contains", "operand": "^\\s*\\*",      "match_all": true }
     ]
   }
 ]

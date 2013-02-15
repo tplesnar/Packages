@@ -1,28 +1,31 @@
-DocBlockr is a [Sublime Text 2][sublime] package which makes writing documentation a breeze. DocBlockr supports **Javascript**, **ActionScript**, **CoffeeScript**, **Java**, **C** and **C++**,
+DocBlockr is a [Sublime Text 2][sublime] package which makes writing documentation a breeze. DocBlockr supports **Javascript**, **PHP**, **ActionScript**, **CoffeeScript**, **Java**, **Objective C**, **C** and **C++**.
 
 ## Installation ##
 
 ### With Package Control ###
 
-If you have the [Package Control][package_control] package installed, you can install DocBlockr from inside Sublime Text itself. Open the Command Palette and select "Package Control: Install Package", then search for DocBlockr and you're done!
-
-### Without Package Control ###
-
-Go to your Sublime Text 2 Packages directory and clone the repository using the command below:
-
-    git clone https://github.com/spadgos/sublime-jsdocs.git DocBlockr
-
-Don't forget to keep updating it, though!
-
-### Without Git ###
-
-Download the latest version from the [tags page][tags]. Unzip to your Sublime Text Packages folder (you can find this by opening ST2 and selecting `Preferences -> Browse Packages...`). You will need to rename the folder from the default (which will be something like `spadgos-sublime-jsdocs-a4bc2a`) to `DocBlockr`. That's it -- you shouldn't even need to restart ST2.
+**Recommended install**. If you have the [Package Control][package_control] package installed, you can install DocBlockr from inside Sublime Text itself. Open the Command Palette and select "Package Control: Install Package", then search for DocBlockr and you're done!
 
 ## Feature requests & bug reports ##
 
 You can leave either of these things [here][issues]. Pull requests are welcomed heartily! In this repo, the main development branch is `develop` and the stable 'production' branch is `master`. Please remember to base your branch from `develop` and issue the pull request back to that branch.
 
 ## Changelog ##
+
+- **v2.9.3**, *12 December 2012*
+  - Fixed bug which stopped regular comments from closing automatically
+- **v2.9.2**, *11 December 2012*
+  - This one goes out to [Thanasis Polychronakis](https://github.com/thanpolas).
+    - Structure of the modules greatly improved
+    - Fixes bug with matching languages with hyphens in the name
+  - Adds support for CUDA-C++
+- **v2.9.1**, *31 October 2012*
+  - Thanks to [wronex](https://github.com/wronex), <kbd>Alt+Q</kbd> will reformat the entire DocBlock, with customisable indentation.
+  - Thanks to [Pavel Voronin](https://github.com/pavel-voronin), spaces around arguments are handled properly.
+  - **C/C++**: Array arguments are accepted
+  - **C/C++**: An argument list containing only `void` doesn't output any `@param` tags
+  - **PHP**: Arguments with an array as a default value inside multi-line arguments are handled properly
+  - <kbd>Ctrl/Cmd + Enter</kbd> and <kbd>Ctrl/Cmd + Shift + Enter</kbd> work inside DocBlocks.
 - **v2.9.0**, *1 October 2012*
   - Adds ObjectiveC and ObjectiveC++ support, thanks to some help from [Robb Böhnke](https://github.com/robb)
     - Very buggy code, support isn't great but it's better than nothing (hopefully).
@@ -30,15 +33,6 @@ You can leave either of these things [here][issues]. Pull requests are welcomed 
   - Notation rules are applied to functions, which means they can define a return type by their name, eg: `strFoo`
   - Notation rules can define arbitrary tags, for example: functions with a prefix of "_" should get the `@private` tag.
   - Given the above addition, JS functions starting with an underscore are no longer marked as `@private` by default.
-- **v2.8.2**, *28 September 2012*
-  - When a function is defined across many lines, the parser will find the arguments on extra lines.
-- **v2.8.1**, *13 September 2012*
-  - Pressing <kbd>tab</kbd> on an empty line will perform a deep indentation instead of moving to the next field
-  - Functions starting with `_` will get a `@private` tag in Javascript (thanks to [Andrew Hanna](https://github.com/percyhanna))
-- **v2.8.0**, *26 August 2012*
-  - New feature: <kbd>Alt+Q</kbd> to reformat the description field of a docblock to make it fit nicely within your ruler.
-  - Adds support for C++ (thanks to [Rafał Chłodnicki](https://github.com/rchl))
-  - Indenting to the description field works in languages which don't require type information in the docblock.
 
 Older history can be found in [the history file](https://github.com/spadgos/sublime-jsdocs/blob/master/HISTORY.md).
 
@@ -276,7 +270,17 @@ With DocBlockr, you can reparse a comment and reactivate the fields by pressing 
 
 ### Reformatting paragraphs ###
 
-Inside a comment block, hit `Alt+Q` to wrap the lines to make them fit within your rulers.
+Inside a comment block, hit `Alt+Q` to wrap the lines to make them fit within your rulers. If you would like subsequent lines in a paragraph to be indented, you can adjust the `jsdocs_indentation_spaces_same_para` setting. For example, a value of `3` might look like this:
+    
+    /**
+     * Duis sed arcu non tellus eleifend ullamcorper quis non erat. Curabitur
+     *   metus elit, ultrices et tristique a, blandit at justo.
+     * @param  {String} foo Lorem ipsum dolor sit amet.
+     * @param  {Number} bar Nullam fringilla feugiat pretium. Quisque
+     *   consectetur, risus eu pellentesque tincidunt, nulla ipsum imperdiet
+     *   massa, sit amet adipiscing dolor.
+     * @return {[Type]}
+     */
 
 ### Adding extra tags ###
 
@@ -342,6 +346,8 @@ You can access the configuration settings by selecting `Preferences -> Package S
 - `jsdocs_return_tag` *(String)* The text which should be used for a `@return` tag. By default, `@return` is used, however this can be changed to `@returns` if you use that style.
 
 - `jsdocs_spacer_between_sections` *(Boolean)* If true, then extra blank lines are inserted between the sections of the docblock. Default: `false`.
+
+- `jsdocs_indentation_spaces_same_para` *(Number)* Described above in the *Reformatting paragraphs* section. Default: `1`
 
 This is my first package for Sublime Text, and the first time I've written any Python, so I heartily welcome feedback and [feature requests or bug reports][issues].
 
